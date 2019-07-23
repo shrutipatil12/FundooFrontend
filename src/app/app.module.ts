@@ -4,7 +4,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './components/register/register.component';
-
+import{HttpClientModule} from '@angular/common/http'
 import { MatIconModule } from "@angular/material/icon";
 import { MatCardModule, MatGridListModule, MatMenuModule, MatGridList, MatToolbarModule, MatCheckboxModule, MatListModule, MatButtonToggleModule } from '@angular/material';
 import{FlexLayoutModule} from '@angular/flex-layout';
@@ -47,7 +47,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
   MatGridListModule,
   MatSidenavModule,
   MatButtonToggleModule,
- 
+  MatToolbarModule,
+  HttpClientModule,
+  
 MatButtonModule,
 MatCheckboxModule,
 MatListModule,

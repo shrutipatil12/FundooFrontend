@@ -19,9 +19,9 @@
     </div>
     <div class="register" fxLayout=column fxLayoutAlign="center center">
 
-      <mat-form-field [style.fontSize.px]="11" appearance="outline" fxFlax="100">
-        <mat-label>Enter Your Name</mat-label>
-        <input matInput placeholder="Enter First Name">
+      <mat-form-field [style.fontSize.px]="11" appearance="outline">
+        <mat-label>Enter Your Name</mat-label >
+        <input matInput placeholder="Enter First Name" [formControl]="firstname" required>
       </mat-form-field>
 
       <mat-form-field [style.fontSize.px]="12" appearance="outline">
@@ -32,17 +32,17 @@
       </mat-form-field>
 
       <!-- <div class="buttn" fxLayout=column fxLayoutAlign="space-around center" > -->
-      <mat-form-field [style.fontSize.px]="12" appearance="outline" hintLabel="Max 8 characters">
+      <mat-form-field [style.fontSize.px]="12" appearance="outline" hintLabel="Min 8 characters">
         <mat-label>Enter Your Password </mat-label>
         <input matInput #input minlength="6" placeholder="Enter your password" name="password" type="password"
-          [formControl]="password" [type]="hide ? 'password' : 'text'">
+          [formControl]="password" required [type]="hide ? 'password' : 'text'">
         <mat-error *ngIf="password.invalid">{{geterrorMessage()}}</mat-error>
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
           [attr.aria-pressed]="hide">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
       </mat-form-field>
-      <button class="blocks" mat-raised-button color="primary">Submit</button>
+      <button class="blocks" mat-raised-button color="primary" (click)="onClicked()">Submit</button>
 
 
     </div>
