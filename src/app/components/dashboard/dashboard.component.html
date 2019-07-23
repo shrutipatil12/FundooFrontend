@@ -1,0 +1,27 @@
+ <div fxLayout="row" fxFlex="100" fxLAyoutGap=50%>
+    <div class="sideMenu" fxLayout="row" fxLayoutAlign="start start" >
+        <mat-button-toggle-group #group="matButtonToggleGroup">
+            <mat-button-toggle value="justify" disabled aria-label="Text align justify">
+                <mat-icon>format_align_justify</mat-icon>
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+        <div class="example-selected-value">{{group.value}}</div>
+    </div>
+    
+    <div  fxLayout="row" >
+        <mat-list fxFlex="80">
+            <mat-divider></mat-divider>
+        </mat-list>
+    </div>
+
+    <!-- <div  fxLayout="row" fxLayoutAlign="center start">
+        <mat-form-field id="search" [style.fontSize.px]="12" appearance="fill" fxFlex=50>
+            <input #search type="search" placeholder="search" [ngClass]="{'filled':filled}" (click)="filled=true"
+                (blur)="filled=search.value?true:false">
+            <mat-icon matPrefix>search</mat-icon>
+            <i class="material-icons">search</i> 
+        </mat-form-field>
+    </div> -->
+
+</div> 
+

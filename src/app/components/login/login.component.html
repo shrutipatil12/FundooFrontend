@@ -1,0 +1,52 @@
+<div class="formsize" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card fxFlex="50">
+    <div class="heading2" fxLayout="column" fxLayoutAlign="center center">
+      <mat-card-title>
+        <p>
+          <span class="f">f</span>
+          <span class="u">u</span>
+          <span class="n">n</span>
+          <span class="d">d</span>
+          <span class="o">o</span>
+          <span class="oo">o</span>
+          <span class="n">n</span>
+          <span class="o">o</span>
+          <span class="t">t</span>
+          <span class="e">e</span>
+        </p>
+      </mat-card-title>
+      <h2> Login</h2>
+    </div>
+
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <mat-form-field [style.fontSize.px]="12" appearance="outline">
+        <mat-label>Enter Your Email</mat-label>
+        <input matInput placeholder="Email" name="email" type="text" [formControl]="email" required>
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-error *ngIf="email.invalid">{{getErrorMessageEmail()}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field [style.fontSize.px]="12" appearance="outline">
+        <mat-label>Enter Your Password</mat-label>
+        <input matInput placeholder="Password" name="password" type="password" [formControl]="password" required>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-icon matSuffix>password</mat-icon>
+        <mat-error *ngIf="password.invalid">{{getErrorMessagePassword()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+
+
+    <div class="button" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap=10%>
+      <button mat-raised-button color="primary" routerLink="../dashboard">Login</button>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap=55%>
+      <p> <a routerLink="../register">CreateAccount</a>
+      </p> <a routerLink="../forgetPassword">ForgetPassword?</a>
+    </div>
+
+  </mat-card>
+</div>
