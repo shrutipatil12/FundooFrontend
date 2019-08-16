@@ -1,8 +1,240 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <img src="../.././../assets/googleKeepLogo.png" width="30px">
+    <h1 class="example-app-name">FundooNote</h1>
+
+    <div fxLayoutGap="20px" fxLayoutAlign="space-around center" fxFlex=50>
+      <mat-card fxLayout="row" fxFlex="100" fxLayoutGap="5px">
+        <mat-icon>search</mat-icon>
+        <input class="textboxDashboard" matInput placeholder="Search">
+      </mat-card>
+    </div>
+    <div fxLayoutAlign="space-around center" fxFlex=30>
+      <button mat-icon-button>
+        <mat-icon>refresh</mat-icon>
+      </button>
+
+      <button mat-icon-button>
+        <mat-icon>view_agenda</mat-icon>
+      </button>
+
+      <button mat-icon-button>
+        <mat-icon>settings</mat-icon>
+      </button>
+
+      <button mat-icon-button>
+        <mat-icon>apps</mat-icon>
+      </button>
+
+      <button mat-icon-button>
+        <mat-icon>account_circle</mat-icon>
+      </button>
+
+    </div>
+
+
+
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56">
+      <mat-nav-list class="siden">
+        <mat-list-item>
+          <mat-icon matListIcon><img src="assets/icon/bulb.svg"></mat-icon>
+          <a matLine>Notes</a>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListIcon><img src="assets/icon/reminder.svg"></mat-icon>
+          <a matLine>Reminder</a>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <p>Label</p>
+
+        <mat-list-item>
+          <mat-icon matListIcon><img src="assets/icon/label.svg"></mat-icon>
+          <a matLine>Edit Label</a>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+
+        <mat-list-item>
+          <mat-icon matListIcon><img src="assets/icon/archives.svg"></mat-icon>
+          <a matLine>Archives</a>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListIcon><img src="assets/icon/bin.svg"></mat-icon>
+          <a matLine>Bin</a>
+        </mat-list-item>
+
+
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <!-- <p *ngFor="let content of fillerContent">{{content}}</p> -->
+      <div>
+        <div fxFlex=100 fxLayoutAlign="center center">
+          <mat-card class="titleCard" fxLayout="column" fxFlex="50">
+            <div fxLayout="row">
+              <input class="titleInputCard" matInput placeholder="Title" fxLayoutGap=70%>
+              <div fxLayout="row" fxLayoutGap=6%>
+                <button matSuffix mat-icon-button>
+                  <mat-icon>check_box</mat-icon>
+                </button>
+
+                <button matSuffix mat-icon-button>
+                  <mat-icon>brush</mat-icon>
+                </button>
+
+                <button mat-icon-button>
+                  <mat-icon>image</mat-icon>
+                </button>
+              </div>
+            </div>
+            <input class="titleInputCard" matInput placeholder="Take a note">
+            <div fxLayout="row" fxLayoutAlign="space-around center" fxFlex=30>
+              <button mat-icon-button>
+                <mat-icon>add_alert</mat-icon>
+              </button>
+
+              <button mat-icon-button>
+                <mat-icon>person_add</mat-icon>
+              </button>
+
+              <button mat-icon-button>
+                <mat-icon>palette</mat-icon>
+              </button>
+
+              <button mat-icon-button>
+                <mat-icon>image</mat-icon>
+              </button>
+
+              <button mat-icon-button>
+                <mat-icon>archives</mat-icon>
+              </button>
+              <button mat-icon-button>
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <button mat-icon-button>
+                <mat-icon>undo</mat-icon>
+              </button>
+              <button mat-icon-button>
+                <mat-icon>redo</mat-icon>
+              </button>
+
+
+              <div class="regButton" FxLayout="row" fxLayoutAlign="center end">
+                <button mat-raised-button>Close</button>
+              </div>
+            </div>
+          </mat-card>
+        </div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+</div>
+
+
 <!-- 
-<mat-toolbar class='.toolBar' color="" fxLayoutAlign="start center" fxLayoutGap='10%' >
+ <div>
+  <mat-toolbar>
+    <div fxLayout="row" fxLayoutGap="45px" fxLayoutAlign="center center" fxFlex=100>
+      <div fxLayoutAlign="space-around center" fxFlex=20>
+
+        <button type="button" mat-button (click)="drawer.toggle()" flexShow="true">
+          <mat-icon>menu</mat-icon>
+        </button>
+
+        <img src='assets/googleKeepLogo.png' width=30px>
+        <span>Fundoonote</span>
+      </div>
+      <div fxLayoutAlign="space-around center" fxFlex=50>
+        <mat-card fxLayout="row" fxFlex="100" fxLayoutGap="5px">
+          <mat-icon>search</mat-icon>
+          <input class="textboxDashboard" matInput placeholder="Search">
+        </mat-card>
+      </div>
+      <div fxLayoutAlign="space-around center" fxFlex=30>
+        <button mat-icon-button>
+          <mat-icon>refresh</mat-icon>
+        </button>
+
+        <button mat-icon-button>
+          <mat-icon>view_agenda</mat-icon>
+        </button>
+
+        <button mat-icon-button>
+          <mat-icon>settings</mat-icon>
+        </button>
+
+        <button mat-icon-button>
+          <mat-icon>apps</mat-icon>
+        </button>
+
+        <button mat-icon-button>
+          <mat-icon>account_circle</mat-icon>
+        </button>
+
+      </div>
+    </div>
+  </mat-toolbar>
+</div> -->
+
+<!-- 
+<div>
+  <mat-drawer-container class="container" autosize fxFlex=100%>
+    <mat-drawer #drawer class="sidenav" mode="side">
+      <mat-nav-list>
+        <mat-list-item>
+          <mat-icon matListIcon><img src="assets/icon/bulb.svg"></mat-icon>
+          <a matLine>Notes</a>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListIcon><img src="assets/icon/reminder.svg"></mat-icon>
+          <a matLine>Reminder</a>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListIcon><img src="assets/icon/archives.svg"></mat-icon>
+          <a matLine>Archives</a>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListIcon><img src="assets/icon/bin.svg"></mat-icon>
+          <a matLine>Bin</a>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListIcon><img src="assets/icon/label.svg"></mat-icon>
+          <a matLine>Label</a>
+        </mat-list-item>
+
+      </mat-nav-list>
+    </mat-drawer>
+
+
+  </mat-drawer-container>
+</div>  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <mat-toolbar class='.toolBar' color="" fxLayoutAlign="start center" fxLayoutGap='10%' >
         <mat-toolbar-row [style.fontSize.px]="12" >
         <span></span>
-        </mat-toolbar-row>  -->
+        </mat-toolbar-row>  
 <mat-toolbar>
 
     <div fxLayout="row" fxLayoutGap=180% fxLayoutAlign="start start">
@@ -13,22 +245,22 @@
 
     <div class="logo" fxLayout="row" fxLayoutGap=200%>
         <img src="assets/googleKeepLogo.png" width=30px>FundooNote
-    </div>
+    </div> -->
 
-
-    <mat-form-field id="search" [style.fontSize.px]="12" appearance="fill" fxFlex=50>
+<!-- 
+    <mat-form-field id="search" [style.fontSize.px]="20" appearance="fill" fxFlex=50>
         <input #search type="search" placeholder="search" [ngClass]="{'filled':filled}" (click)="filled=true"
             (blur)="filled=search.value?true:false">
         <mat-icon matSuffix>search</mat-icon>
-        <!-- <i class="material-icons">search</i> -->
-    </mat-form-field>
+         <i class="material-icons">search</i>
+    </mat-form-field> -->
 
-    <i class="material-icons">
+<!-- <i class="material-icons">
             refresh
             </i>
 
 
-</mat-toolbar>
+</mat-toolbar> -->
 
 
 
@@ -62,4 +294,4 @@
         </mat-form-field>
     </div> -->
 
-<!-- </div>  -->
+<!-- </div> -->

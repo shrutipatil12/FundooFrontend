@@ -1,5 +1,5 @@
 <div class="formsize" fxLayout="row" fxLayoutAlign="space-around center">
-  <mat-card fxFlex="55">
+  <mat-card fxFlex="45">
     <div class="heading2" fxLayout="column" fxLayoutAlign="center center">
       <mat-card-title>
         <p>
@@ -17,37 +17,57 @@
       </mat-card-title>
       <h2> Registration</h2>
     </div>
-    <div class="register" fxLayout=column fxLayoutAlign="center center">
 
-      <mat-form-field [style.fontSize.px]="11" appearance="outline">
-        <mat-label>Enter Your Name</mat-label >
+    <!-- <div class="register" fxLayout=column> -->
+    <div class="textBoxRegister" fxLayout="row" fxLayoutGap=80% >
+      <mat-form-field [style.fontSize.px]="12" appearance="outline" fxFlex="800">
+        <mat-label>Enter Your First Name</mat-label>
         <input matInput placeholder="Enter First Name" [formControl]="firstname" required>
+        <mat-icon matSuffix>perm_identity</mat-icon>
       </mat-form-field>
 
+      <mat-form-field [style.fontSize.px]="12" appearance="outline" fxFlex="800">
+        <mat-label>Enter Your Last Name</mat-label>
+        <input matInput placeholder="Enter last Name" [formControl]="lastname" required>
+        <mat-icon matSuffix>perm_identity</mat-icon>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout=column> 
       <mat-form-field [style.fontSize.px]="12" appearance="outline">
         <mat-label>Enter Your Email</mat-label>
         <input matInput placeholder="Email" name="email" type="text" [formControl]="email" required>
         <mat-icon matSuffix> email </mat-icon>
         <mat-error *ngIf="email.invalid">{{getErrorMessageEmail()}}</mat-error>
       </mat-form-field>
-
-      <!-- <div class="buttn" fxLayout=column fxLayoutAlign="space-around center" > -->
+    </div>
+    <div class="buttn" fxLayout=row fxLayoutGap=4%>
       <mat-form-field [style.fontSize.px]="12" appearance="outline" hintLabel="Min 8 characters">
         <mat-label>Enter Your Password </mat-label>
         <input matInput #input minlength="6" placeholder="Enter your password" name="password" type="password"
           [formControl]="password" required [type]="hide ? 'password' : 'text'">
         <mat-error *ngIf="password.invalid">{{geterrorMessage()}}</mat-error>
-        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-          [attr.aria-pressed]="hide">
-          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </button>
+
       </mat-form-field>
-      <button class="blocks" mat-raised-button color="primary" (click)="onClicked()">Submit</button>
 
+      <!-- <div> -->
+      <mat-form-field [style.fontSize.px]="12" appearance="outline" hintLabel="Min 8 characters" fxFlex="100">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput placeholder="Password" name="password" type="password" [formControl]="password" required
+          [type]="hide ? 'password' : 'text'">
 
+        <mat-error *ngIf="password.invalid">{{getErrorMessageConfirmPassword()}}</mat-error>
+      </mat-form-field>
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
     </div>
+    <!-- </div> -->
 
-
+    <div class="regButton" fxLayout="row" fxLayoutAlign="center center">
+      <button class="blocks" mat-raised-button color="primary" (click)="onClicked()">Submit</button>
+    </div>
 
 
     <!-- </div> -->

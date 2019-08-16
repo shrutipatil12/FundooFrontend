@@ -10,7 +10,11 @@ export class UserService {
 
   constructor(private http:HttpClient) { }
 
-  postUser(user:User,){
+  post(user:User,){
     return this.http.post(environment.baseUrl+'/register',user);
   }
+
+  // post(user:User,){
+  //   return this.http.post(environment.baseUrl+'/login',user);
+  // }
 }

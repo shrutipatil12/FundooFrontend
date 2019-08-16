@@ -11,16 +11,12 @@
   background: lightblue;
 }
 
-#search input[type=search].filled{
+#search input[type=search].filled {
   width: 700px;
   height: 30px;
   padding-left: 80px;
 }
-// .searchBar{
-//   width: 1000px;
-//   height: 50px;
-//      padding-left: 50px;
-// }
+
 .divider {
   height: 90vh;
   color: red;
@@ -31,13 +27,79 @@
   margin: 15px 0;
   color: black;
 }
-.toolBar
-{
+
+.toolBar {
   width: 1100px;
   height: 30px;
 }
-.logo
-{
-  
+
+.logo {
+
   height: 30px;
+}
+
+.textBoxRegister {
+  margin-left: 7px;
+  width: 90px;
+}
+
+.textboxDashboard {
+
+  width: 1000px;
+  height: 20px;
+  padding-left: 30px;
+  border: unset;
+  outline: unset;
+  margin: unset;
+}
+
+.siden {
+  padding: 20px;
+  width: 250px;
+}
+
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-is-mobile .example-toolbar {
+  position: fixed;
+  z-index: 2;
+}
+
+h1.example-app-name {
+  margin-left: 8px;
+}
+
+.example-sidenav-container {
+
+  flex: 1;
+}
+
+.example-is-mobile .example-sidenav-container {
+  flex: 1 0 auto;
+}
+
+.titleInputCard {
+ 
+  border: unset;
+  outline: none;
+  margin: unset;
+}
+.takeNoteInputCardTitle{
+  border: unset;
+  outline: none;
+  margin: unset;
+  height: 20%;
+}
+
+.titleCard {
+  width: 100px;
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient,HttpHeaders} from '@angular/common/http';
 import {User} from '../../user';
 import {environment} from '../../../environments/environment'
   import { from } from 'rxjs';
@@ -10,7 +10,10 @@ export class HttpService {
 
   constructor(private http:HttpClient) { }
 
-  postUser(user:User,url){
+  post(user:User,url){
     return this.http.post(environment.baseUrl+url,user);
   }
+  // post(user:User,url){
+  //   return this.http.post(environment.baseUrl+url,user);
+  // }
 }

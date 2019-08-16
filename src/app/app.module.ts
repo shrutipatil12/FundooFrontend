@@ -16,6 +16,7 @@ import { ForgetPasswordComponent } from './components/forget-password/forget-pas
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatSnackBarModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
   MatButtonToggleModule,
   MatToolbarModule,
   HttpClientModule,
+  MatSnackBarModule,
   
 MatButtonModule,
 MatCheckboxModule,
