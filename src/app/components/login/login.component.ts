@@ -5,13 +5,14 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { User } from 'src/app/user';
 import { Router } from '@angular/router';
 // import { Router } from '@angular/router'
+import { UserService } from '../../services/user/user.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  constructor(private httpService: HttpService, private snackbar: MatSnackBar, private router: Router) { }
+  constructor(private UserService: UserService, private snackbar: MatSnackBar, private router: Router) { }
   // hide = true;
   email = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('', [Validators.required]);
@@ -38,13 +39,34 @@ export class LoginComponent implements OnInit {
     this.user.password = this.password.value;
 
     console.log(this.user);
-    let loginData: any = {
-      "email": this.user.email,
-      "password": this.user.password
-    }
-    console.log(loginData);
-    this.httpService.post(loginData,'/login').subscribe(
-      res => {
+
+    this.UserService.login(this.user, '/login').subscribe(
+      (response: any) => {
+        console.log("res", response);
+        var userId = response.data._id;
+        var email = response.data.email;
+        var password = response.data.password;
+        var lastname = response.data.lastname;
+        // tslint:disable-next-line: prefer-const
+        var firstname = response.data.firstname;
+
+        var isVerified = response.data.isVerified;
+
+        var token = response.token;
+
+
+        localStorage.setItem("userId", userId)
+        localStorage.setItem("email", email)
+
+        localStorage.setItem("password", password)
+
+        localStorage.setItem("lastname", lastname)
+
+        localStorage.setItem("firstname", firstname)
+
+        localStorage.setItem("isVerified", isVerified)
+        localStorage.setItem("token", token)
+
 
         this.snackbar.open("login Successfull", "end now", { duration: 4000 });
         this.router.navigateByUrl('dashboard');
@@ -55,6 +77,7 @@ export class LoginComponent implements OnInit {
       }
     );
   }
+  
   ngOnInit() {
   }
 

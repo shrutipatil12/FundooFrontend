@@ -4,6 +4,7 @@ import { User } from 'src/app/user';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpService } from 'src/app/services/http/http.service';
 import { Router,ActivatedRoute } from '@angular/router';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-reset-password',
@@ -11,7 +12,7 @@ import { Router,ActivatedRoute } from '@angular/router';
   styleUrls: ['./reset-password.component.scss']
 })
 export class ResetPasswordComponent implements OnInit {
-  constructor(private httpService: HttpService, private snackbar: MatSnackBar, private router: Router,private route:ActivatedRoute) { }
+  constructor(private userService: UserService, private snackbar: MatSnackBar, private router: Router,private route:ActivatedRoute) { }
   hide=true;
   password = new FormControl('', [Validators.required]);
 
@@ -45,12 +46,8 @@ export class ResetPasswordComponent implements OnInit {
     let token:any=this.route.snapshot.paramMap.get('token');
     console.log("token in reset",token);
     
-    let loginData: any = {
-      "password": this.user.password,
-      
-    }
-    console.log(loginData);
-    this.httpService.post(loginData, '/reset/'+token).subscribe(
+    
+    this.userService.resetPassword(this.user, '/reset/'+token).subscribe(
       res => {
 
         this.snackbar.open("reset password Suceessfully", "end now", { duration: 4000 });

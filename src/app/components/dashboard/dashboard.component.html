@@ -60,7 +60,7 @@
         </mat-list-item>
         <mat-divider></mat-divider>
 
-        <mat-list-item>
+        <mat-list-item routerLink="archives">
           <mat-icon matListIcon><img src="assets/icon/archives.svg"></mat-icon>
           <a matLine>Archives</a>
         </mat-list-item>
@@ -68,14 +68,21 @@
           <mat-icon matListIcon><img src="assets/icon/bin.svg"></mat-icon>
           <a matLine>Bin</a>
         </mat-list-item>
-
-
       </mat-nav-list>
     </mat-sidenav>
+    <div>
+    <app-create-note></app-create-note>
+  </div>
+  <div>
+    <app-notes></app-notes>
+  </div>
+    <!-- </mat-sidenav-content> -->
+  </mat-sidenav-container>
 
-    <mat-sidenav-content>
-      <!-- <p *ngFor="let content of fillerContent">{{content}}</p> -->
-      <div>
+</div>
+<!-- <mat-sidenav-content> -->
+<!-- <p *ngFor="let content of fillerContent">{{content}}</p> -->
+<!-- <div>
         <div fxFlex=100 fxLayoutAlign="center center">
           <mat-card class="titleCard" fxLayout="column" fxFlex="50">
             <div fxLayout="row">
@@ -132,11 +139,8 @@
             </div>
           </mat-card>
         </div>
-      </div>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+      </div> -->
 
-</div>
 
 
 <!-- 
@@ -184,114 +188,3 @@
   </mat-toolbar>
 </div> -->
 
-<!-- 
-<div>
-  <mat-drawer-container class="container" autosize fxFlex=100%>
-    <mat-drawer #drawer class="sidenav" mode="side">
-      <mat-nav-list>
-        <mat-list-item>
-          <mat-icon matListIcon><img src="assets/icon/bulb.svg"></mat-icon>
-          <a matLine>Notes</a>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon matListIcon><img src="assets/icon/reminder.svg"></mat-icon>
-          <a matLine>Reminder</a>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon matListIcon><img src="assets/icon/archives.svg"></mat-icon>
-          <a matLine>Archives</a>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon matListIcon><img src="assets/icon/bin.svg"></mat-icon>
-          <a matLine>Bin</a>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon matListIcon><img src="assets/icon/label.svg"></mat-icon>
-          <a matLine>Label</a>
-        </mat-list-item>
-
-      </mat-nav-list>
-    </mat-drawer>
-
-
-  </mat-drawer-container>
-</div>  -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <mat-toolbar class='.toolBar' color="" fxLayoutAlign="start center" fxLayoutGap='10%' >
-        <mat-toolbar-row [style.fontSize.px]="12" >
-        <span></span>
-        </mat-toolbar-row>  
-<mat-toolbar>
-
-    <div fxLayout="row" fxLayoutGap=180% fxLayoutAlign="start start">
-        <mat-button-toggle value="justify">
-            <mat-icon>menu</mat-icon>
-        </mat-button-toggle>
-    </div>
-
-    <div class="logo" fxLayout="row" fxLayoutGap=200%>
-        <img src="assets/googleKeepLogo.png" width=30px>FundooNote
-    </div> -->
-
-<!-- 
-    <mat-form-field id="search" [style.fontSize.px]="20" appearance="fill" fxFlex=50>
-        <input #search type="search" placeholder="search" [ngClass]="{'filled':filled}" (click)="filled=true"
-            (blur)="filled=search.value?true:false">
-        <mat-icon matSuffix>search</mat-icon>
-         <i class="material-icons">search</i>
-    </mat-form-field> -->
-
-<!-- <i class="material-icons">
-            refresh
-            </i>
-
-
-</mat-toolbar> -->
-
-
-
-<!-- <div fxLayout="row" fxFlex="100" fxLAyoutGap=50%> -->
-
-<!-- <mat-toolbar appearance="fill"></mat-toolbar>
-
-<div class="sideMenu" fxLayout="row" fxLayoutAlign="start center">
-    <mat-button-toggle-group #group="matButtonToggleGroup">
-        <mat-button-toggle value="justify" disabled aria-label="Text align justify">
-            <mat-icon>format_align_justify</mat-icon>
-        </mat-button-toggle>
-    </mat-button-toggle-group>
-    <div class="example-selected-value">{{group.value}}</div> -->
-
-
-<!--</div>
-   
-    <div  fxLayout="row" >
-        <mat-list fxFlex="80">
-            <mat-divider></mat-divider>
-        </mat-list>
-    </div> -->
-
-<!-- <div  fxLayout="row" fxLayoutAlign="center start">
-        <mat-form-field id="search" [style.fontSize.px]="12" appearance="fill" fxFlex=50>
-            <input #search type="search" placeholder="search" [ngClass]="{'filled':filled}" (click)="filled=true"
-                (blur)="filled=search.value?true:false">
-            <mat-icon matPrefix>search</mat-icon>
-            <i class="material-icons">search</i> 
-        </mat-form-field>
-    </div> -->
-
-<!-- </div> -->

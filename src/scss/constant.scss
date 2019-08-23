@@ -92,14 +92,23 @@ h1.example-app-name {
   border: unset;
   outline: none;
   margin: unset;
+  outline-color: white;
 }
 .takeNoteInputCardTitle{
-  border: unset;
+  border: none;
   outline: none;
-  margin: unset;
+  margin: none;
   height: 20%;
+  outline-color: white;
 }
 
 .titleCard {
   width: 100px;
+}
+
+.noteMatcard{
+  margin-top: 5vh;
+}
+.noteIconSize{
+  size: 20vh
 }

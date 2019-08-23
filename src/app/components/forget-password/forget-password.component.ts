@@ -4,6 +4,7 @@ import { User } from 'src/app/user';
 import { HttpService } from 'src/app/services/http/http.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-forget-password',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./forget-password.component.scss']
 })
 export class ForgetPasswordComponent implements OnInit {
-  constructor(private httpService: HttpService, private snackbar: MatSnackBar, private router: Router) { }
+  constructor(private userService: UserService, private snackbar: MatSnackBar, private router: Router) { }
 
   email=new FormControl('', [Validators.required, Validators.email]);
   user: User = new User();
@@ -29,12 +30,8 @@ export class ForgetPasswordComponent implements OnInit {
   
     console.log("hugyhfghf");
     console.log(this.user);
-    let loginData: any = {
-      "email": this.user.email,
-      
-    }
-    console.log(loginData);
-    this.httpService.post(loginData, '/forget').subscribe(
+   
+    this.userService.forgetPassword(this.user, '/forget').subscribe(
       (res:any) => {
 
         this.snackbar.open("forget password Suceessfully,Email sent", "end now", { duration: 4000 });

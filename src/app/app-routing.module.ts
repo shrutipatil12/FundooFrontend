@@ -6,6 +6,11 @@ import { ForgetPasswordComponent } from './components/forget-password/forget-pas
 import { from } from 'rxjs';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component'
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NotesComponent } from './components/notes/notes.component';
+import { NoteIconsComponent } from './components/note-icons/note-icons.component';
+import { CreateNoteComponent } from './components/create-note/create-note.component';
+import { ArchivesComponent } from './components/archives/archives.component';
+
 
 const routes: Routes = [
   {
@@ -17,7 +22,20 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'forgetPassword', component: ForgetPasswordComponent },
   { path: 'reset/:token', component: ResetPasswordComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent,
+  children:[
+    // { path: 'dashboard', component: NotesComponent },
+    { path: 'notes', component: NoteIconsComponent },
+    { path: 'archives', component: ArchivesComponent }
+
+    
+
+
+  ] 
+}
+  // { path: 'getAllNote', component: NotesComponent },
+  // { path: 'createNote', component: CreateNoteComponent },
+
 
  
 ];

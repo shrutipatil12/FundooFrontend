@@ -1,0 +1,97 @@
+<!-- <div>
+      <div fxFlex=100 fxLayoutAlign="center center">
+          <mat-card class="titleCard" fxLayout="column" fxFlex="50">
+            <div fxLayout="row">
+              <input class="titleInputCard" matInput placeholder="Title" fxLayoutGap=70%>
+              <div fxLayout="row" fxLayoutGap=6%>
+                <button matSuffix mat-icon-button>
+                  <mat-icon>check_box</mat-icon>
+                </button>
+
+                <button matSuffix mat-icon-button>
+                  <mat-icon>brush</mat-icon>
+                </button>
+
+                <button mat-icon-button>
+                  <mat-icon>image</mat-icon>
+                </button>
+              </div>
+            </div> 
+             <input class="titleInputCard" matInput placeholder="Take a note">
+            <div fxLayout="row" fxLayoutAlign="space-around center" fxFlex=30>
+              <button mat-icon-button>
+                <mat-icon>add_alert</mat-icon>
+              </button>
+
+              <button mat-icon-button>
+                <mat-icon>person_add</mat-icon>
+              </button>
+
+              <button mat-icon-button>
+                <mat-icon>palette</mat-icon>
+              </button>
+
+              <button mat-icon-button>
+                <mat-icon>image</mat-icon>
+              </button>
+
+              <button mat-icon-button>
+                <mat-icon>archives</mat-icon>
+              </button>
+              <button mat-icon-button>
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <button mat-icon-button>
+                <mat-icon>undo</mat-icon>
+              </button>
+              <button mat-icon-button>
+                <mat-icon>redo</mat-icon>
+              </button>
+
+
+              <div class="regButton" FxLayout="row" fxLayoutAlign="center end">
+                <button mat-raised-button>Close</button>
+              </div>
+            </div> 
+          </mat-card>
+        </div>
+      </div> -->
+
+
+
+<mat-sidenav-content fxLayoutGap='10'>
+  <div fxLayoutGap='60px' fxLayoutAlign="center start">
+    <mat-card class="takeNoteInputCardTitle" *ngIf="!isPopUp" (click)="popUp()" fxLayoutAlign="space-around start" fxFlex="48">
+      <div fxLayout="row" fxFlex=100>
+        <input matInput type="text" class="takeNoteInputCardTitle" placeholder="Take a Note" fxFlex=100 [style.fontSize.px]="15">
+      </div>
+     
+    </mat-card>
+  </div>
+
+  <div fxLayoutGap='60px' fxLayoutAlign="center start" fxLayout="row">
+    <mat-card class="takeNoteInputCardTitle" *ngIf="isPopUp" fxLayout="column" fxLayoutAlign="space-between start" fxFlex="48">
+      <div fxLayout="column" fxFlex="100">
+        <input matInput type="text" class="takeNoteInputCardTitle" placeholder="Title" fxFlex="100">
+        <input matInput type="text" class="takeNoteInputCardTitle" placeholder="Take a Note" fxFlex="100">
+
+      </div>
+
+      <div fxLayout="row">
+        <div fxLayoutAlign="start end">
+       <app-note-icons></app-note-icons>
+        </div>
+        <div>
+          <button matPreffix mat-icon-button>
+            <mat-icon style="font-size: 19px;">undo</mat-icon>
+          </button>
+          <button matPreffix mat-icon-button>
+            <mat-icon style="font-size: 19px;" >redo</mat-icon>
+          </button>
+        </div>
+        <div fxLayoutAlign="end end">
+          <button fxLayoutAlign="end end" mat-raised-button (click)="Close()">Close</button>
+        </div>
+      </div>
+    </mat-card>
+  </div>

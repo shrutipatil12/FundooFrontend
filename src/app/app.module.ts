@@ -17,6 +17,11 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatSnackBarModule} from '@angular/material';
+import { NotesComponent } from './components/notes/notes.component';
+import { NoteIconsComponent } from './components/note-icons/note-icons.component';
+import { CreateNoteComponent } from './components/create-note/create-note.component';
+import { GetAllNoteComponent } from './components/get-all-note/get-all-note.component';
+import { ArchivesComponent } from './components/archives/archives.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,14 @@ import {MatSnackBarModule} from '@angular/material';
 
   ResetPasswordComponent,
 
-  DashboardComponent
+  DashboardComponent,
+
+  NotesComponent,
+
+  CreateNoteComponent,
+  NoteIconsComponent,
+  GetAllNoteComponent,
+  ArchivesComponent
   ],
   imports: [
   BrowserModule,
